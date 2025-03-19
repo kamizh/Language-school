@@ -1,0 +1,49 @@
+﻿<Page x:Class="Language_school.ClientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Language_school"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClientsPage" FontFamily="Comic Sans MS" >
+
+    <Grid>
+        <ListView Name="ClientsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Width="150" Grid.RowSpan="5" Stretch="Uniform">
+                            <Image.Source>
+                                <Binding Path="PhotoPath">
+                                    <Binding.TargetNullValue>
+                                        images/school_png
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding fullName}" FontSize="14" ></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding GenderAndData}" FontSize="14" ></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding PhoneAndEmail}" FontSize="14" ></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding DataRegist}" FontSize="14" ></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding lastPole}" FontSize="14" ></TextBlock>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
